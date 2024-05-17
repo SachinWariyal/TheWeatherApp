@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/src/assets/background1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0; /* Add margin reset to ensure centering */
+    height: 100vh; /* Ensure body takes full height */
+}
+
+.container {
+    display: flex; /* Ensure .container is a flex container */
+    justify-content: center;
+    min-width: 50vw;
+    min-height: 80vh;
+    margin-top: 5vh;
+    /* background-color: yellow; */
+}
+
+/* Media rule for min-width: 600px */
+@media screen and (min-width: 600px) {
+    .container {
+        flex-wrap: wrap;
+    }
+}
+
+/* Media rule for max-width: 1080px */
+@media screen and (max-width: 1080px) {
+    .container {
+        flex-wrap: wrap; /* Ensure flex-wrap is applied */
+    }
+    .regular-data {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+}
+
+.left-container {
+    min-width: 20vw;
+    background: url("/src/assets/city.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    position: relative;
+    background-position-x: -30px;
+    opacity: 80%;
+    padding: 1rem;
+}
+
+.right-container {
+    background-color: black;
+    color: white;
+    opacity: 50%;
+    min-width: 20vw;
+    padding: 1rem;
+}
+
+.current-city-name {
+    color: white;
+    text-align: end;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    font-size: xx-large;
+}
+
+.date-container {
+    position: absolute;
+    bottom: 0;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.date, .time {
+    color: white;
+}
+
+.time {
+    font-size: 2rem;
+}
+
+.weather-forecast {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.search-box {
+    background-color: white;
+    color: black;
+    margin-left: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.weather-data {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: start;
+}
+
+.regular-data {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 1.3rem;
+}
+
+.regular-data p {
+    margin: 2rem;
+}
+
+.sunrise-sunset, .max-min-temp {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    font-size: 1rem;
+}
+
+.sunrise-sunset {
+    bottom: 16%;
+}
+
+.max-min-temp {
+    bottom: 12%;
+}
