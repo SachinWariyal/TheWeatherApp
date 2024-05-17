@@ -1,19 +1,14 @@
 
 import axios from "axios";
-import { useState, useEffect } from "react"; // Import useEffect
-// import PropTypes from 'prop-types';
+import { useState, useEffect } from "react";
 import "./currentLocation.css";
 import { UseDate } from "./Date/UseDate";
 import Forecast from "./Forecast/Forecast";
-// import Navbar from "./Navbar/Navbar";
 const CurrentLocation = () => {
-  // const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  // const [searchResults, setSearchResult] = useState([]);
-  const [selectedCity, setSelectedCity] = useState({ name: "", country: "" }); // Initialize selectedCity as an object
+  const [selectedCity, setSelectedCity] = useState({ name: "", country: "" }); 
   const { date, time } = UseDate();
   useEffect(() => {
-    // Fetch weather data when searchTerm changes
     if (searchTerm !== '') {
       weatherData(searchTerm);
     }
@@ -30,7 +25,7 @@ const CurrentLocation = () => {
   
       if (data.results && data.results.length > 0) {
         // setSearchResult(data.results);
-        setSelectedCity(data.results[0]); // Select the first result as the selected city
+        setSelectedCity(data.results[0]); 
         // console.log(selectedCity.name);
       } 
     } catch (e) {
@@ -47,11 +42,9 @@ const CurrentLocation = () => {
   }
   return (
     <>
-    {/* <UseDate/> */}
-      {/* <Navbar/>  */}
       <div className="container">
         <div className="left-container">
-          {selectedCity.name && ( // Check if selectedCity has a name before rendering
+          {selectedCity.name && ( 
             <>
             <h1 className="current-city-name">{selectedCity.name}, {selectedCity.country}</h1>
               <div className="date-container">
